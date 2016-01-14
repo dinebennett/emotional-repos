@@ -1,0 +1,40 @@
+<div [ngClass]="{hatebg: toggle, lovebg: !toggle}">
+    <div class="container">
+
+        <div class="top-button">
+            <button (click)="onToggle()" class="waves-effect waves-light btn" [ngClass]="{lovebutton:toggle, hatebutton: !toggle}">
+                <span *ngIf="toggle">Love</span>
+                <span *ngIf="(toggle === false)">Hate</span>
+            </button>
+        </div>
+
+        <h1 class="center emo-heading">Emotional Repos</h1>
+        <i><h6 class="center">Because we love to hate our code...</h6></i>
+
+        <br/>
+
+        <div class="row">
+
+            <div class="col s12" *ngIf="toggle">
+                <div *ngFor="#repo of hateRepos">
+                    <repo-item [repo]="repo"></repo-item>
+                    <div class="divider hate-divider"></div>
+                </div>
+            </div>
+
+            <div class="col s12" *ngIf="!toggle">
+                <div *ngFor="#repo of loveRepos">
+                    <repo-item [repo]="repo"></repo-item>
+                    <div class="divider love-divider"></div>
+                </div>
+            </div>
+
+            <div class="center">
+                <a (click)="onMore()" *ngIf="!loading" class="btn-floating btn-large waves-effect waves-light teal more-button"><i
+                        class="material-icons">add</i></a>
+            </div>
+
+        </div>
+
+    </div>
+</div>

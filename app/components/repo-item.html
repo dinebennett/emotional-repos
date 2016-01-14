@@ -1,0 +1,20 @@
+<div class="section">
+    <div class="row row-no-margin">
+        <div class="col s2">
+            <div style="display: table; height: 120px; overflow: hidden;">
+                <div style="display: table-cell; vertical-align: middle;">
+                    <img src="{{repo.owner.avatar_url}}" style="height:80px">
+                </div>
+            </div>
+        </div>
+        <div class="col s10 bigger-font">
+            <div style="display: table; height: 120px; overflow: hidden;">
+                <div style="display: table-cell; vertical-align: middle;">
+                    <p>{{repo.description}}</p>
+                    <p class="smaller-font"><a href="{{repo.html_url}}" target="_blank">{{repo.name}} by {{repo.owner.login}} // Updated:
+                        {{repo.updated_at}}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
